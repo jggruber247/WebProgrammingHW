@@ -1,0 +1,184 @@
+/* FILE: "GruberHW7.css"
+Garrett Gruber
+November 13, 2018
+This is the styling sheet for 'GruberHW7.html' The app will be responsive when displayed on any modern smartphone browser, both in landscape and portrait.*/
+header {
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	padding: 0px;
+	width: 100%;
+	float: left;
+}
+
+hr {
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	border-left-width: 0px;
+	border-right-width: 0px;
+}
+
+h3, h4, h5 {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+h1 {
+	text-align: center;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 0%;
+	width: 80%;
+	font-size: 250%;
+	font-family: Courier;
+}
+
+h2 {
+	text-align: center;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 0%;
+	width: 90%;
+	font-size: auto;
+}
+	
+h3 {
+	text-align: center;
+	width: 90%;
+	font-size: 200%;
+	color: blue;
+}
+	
+h4 {
+	text-align: center;
+	width: 90%;
+	font-size: 200%;
+	color: red;
+}
+
+h4#hint {
+	margin: 0% 41% 0% 41%;
+	width: 18%;
+	font-weight: bold;
+}
+
+/* Remains hidden until first guess is submitted */
+h4#guesses {
+	font-size: 160%;
+	color: green;
+	display: none;
+}
+	
+h5 {
+	text-align: center;
+	width: 90%;
+	font-size: 175%;
+	color: purple;
+}
+
+div {
+	text-align: center;
+	width: 100%;
+	height: auto;	
+}
+
+footer {
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 0px;
+	width: 100%;
+	text-align: center;
+	float: left;
+}
+	
+input {
+	text-align: center;
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-bottom: 3px;
+	width: 70%;
+	border: none;
+	border-bottom: 3px solid black;
+	font-size: 200%;
+}
+	
+button {
+	width: 30%;
+	height: 50px;
+	margin: 20px 35% 20px 35%;
+	font-size: 190%;
+}
+
+/* Image is initially hidden, but becomes visible when the user's guess is very close to the answer (within 20) */
+img#burn {
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 215px;
+	
+}
+
+/* display settings for mobile devices */
+@media only screen and (max-width: 768px) {
+	html {
+		margin: 0;
+		padding: 0;
+		max-height: 100%;
+	}
+	body {
+		margin: 0px;
+		padding: 0px;
+	}
+	section {
+		margin-top: 0%;
+		padding-top: 0%;
+	}
+	div {
+		margin:  8% 0% 8% 0%;
+	}
+	footer {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	header {
+		margin-top: 0%;
+		margin-bottom: 0%;
+		padding-top: 0%;
+	}
+	h1 {
+		text-align: center;
+		margin-left: 5%;
+		margin-right: 5%;
+		padding: 0%;
+		width: 90%;
+		font-size: 150%;
+	}
+	h3, h5 {
+		margin: 0% 5% 0% 5%;
+		font-size: 190%;
+	}
+	
+	h4#hint {
+		margin-left: auto;
+		margin-right: auto;
+		width: 90%;
+	}
+	
+	h4#guesses {
+		font-size: 120%;
+	}
+
+	input, button {
+		padding: 0%;
+	}
+	button {
+		margin: 0% 35% 0% 35%;
+		font-size: 150%;
+	}
+	
+	img#burn {
+		display: none;
+		max-width: 200px;
+	}
+}

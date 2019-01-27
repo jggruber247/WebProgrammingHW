@@ -1,0 +1,140 @@
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 1px;
+	overflow: hidden;
+	background-color: green;
+	border: 7px ridge darkgreen;
+}
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 20px;
+	text-decoration: none;
+	border: 5px ridge green;
+	/* border-radius: 15px; */
+	font-family: Comic Sans MS;
+	font-weight: bold;
+}
+li a:hover {
+	background: black url("no.gif") repeat-x fixed top;
+	background-color: white;
+	color: blue;
+	font-family: Comic Sans MS;
+	font-weight: bold;
+	text-shadow: 1px 1px orange;
+}
+li.b {
+	float: none;
+}
+* {
+	box-sizing: border-box;
+}
+
+article {
+	float: left;
+	padding: 20px;
+	width: 50%;
+	background-color: lightblue;
+	height: 300px;
+	color: black;
+	border: 7px ridge lightblue;
+}
+article.alt {
+	float: right;
+	padding: 20px;
+	width: 50%;
+	background-color: yellow;
+	height: 300px;
+	color: purple;
+	border: 7px ridge yellow;
+}
+section:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+footer {
+	background-color: gray;
+	padding: 5px;
+	text-align: center;
+	color: black;
+	border: 5px ridge darkgray;
+}
+
+@media (max-width: 600px){
+	article{
+		width: 100%;
+		height: auto;
+	}
+}
+
+h1 {
+	text-align: center;
+	color: black;
+	text-shadow: -1px -1px white;
+	font-weight: bold;
+}
+h2 {
+	text-align: center;
+	font-family: Verdana;
+}
+h3 {
+	background-color: pink;
+	color: darkred;
+	padding: 20px;
+	text-align: center;
+	margin: 0px;
+	border: 7px ridge pink;
+}
+p {
+	text-align: center;
+	font-family: Ariel;
+	font-style: oblique;
+/* 	margin-top: 50px;
+	margin-right: 30px;
+	margin-bottom: 40px;
+	border-left: 100px; */
+}
+
+p.fineprint {
+	text-align: center;
+	font-family: Times New Roman;
+	font-size: 0.3em;
+}
+
+ol {
+	list-style-type: upper-alpha;
+}
+
+header {
+	margin: 0px;
+	padding: 0px;
+}
+
+div {
+	border: 1px solid red;
+	margin-left: 100px;
+}
+
+p.ex1 {
+	margin-left: inherit;
+	text-indent: 35px;
+	letter-spacing: 5px;
+	line-height: 1.8;
+	word-spacing: -5px;
+	text-shadow: 2px 1px black;
+	font-style: oblique;
+	font-size: 100%;
+}
+
+p.oblic {
+	text-style: oblique;
+	font-size: 20vw;
+}

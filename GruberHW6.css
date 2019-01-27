@@ -1,0 +1,134 @@
+/* FILE: "GruberHW6.css"
+Garrett Gruber
+November 1, 2018
+This is the styling sheet for GruberHW6.html */
+body {
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+header {
+	position: fixed; /* This line */
+	top:0; /* and this line make the header fixed at the top of the page. */
+	margin-left: 0;
+	margin-right: 0;
+	padding: 10px 20% 10px 20%;
+	width: 100%;
+	height: 50px;
+	background-color: black;
+}
+
+/* Size formatting for the buttons */
+button {
+	width: 20%;
+	height: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	float: left;
+}
+
+/* Formatting for the individual buttons */
+button#go {
+	background-color: green;
+	color: white;
+	border: 2px solid black;
+}
+button#stop {
+	background-color: red;
+	color: white;
+	border: 2px solid black;
+}
+button#reset {
+	background-color: orange;
+	color: black;
+	border: 2px solid black;
+}
+
+/* Formatting for the text */
+h1 {
+	font-size: 250%;
+}
+h2 {
+	font-size: 150%;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+p {
+	font-family: "Comic Sans MS";
+	padding-left: 70px;
+	padding-right: 70px;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+hr {
+	width: 15%;
+}
+hr#bold {
+	width: 70%;
+	border-top: 3px solid gray;
+}
+
+section {
+	margin-top: 70px; /*keeps the text below the header */
+}
+
+/* margin and padding is used to create the infinite scroll illusion */
+section#clone {
+	margin-top: 60px;
+	padding-bottom: 75px;
+}
+
+section::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+img {
+	width: 20%;
+	margin-left: 40%;
+	margin-right: 40%;
+	padding: 0;
+	float: left;
+}
+
+/* When the screen is narrowed, the text will shrink to a better formatted size */
+@media only screen and (max-width: 500px) {
+	h1 {
+		font-size: 200%;
+	}
+	h2 {
+		font-size: 120%;
+	}
+	p {
+		font-family: "Comic Sans MS";
+		font-size: 80%;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	/* The image also resizes to become more visible */
+	img {
+		width: 40%;
+		margin-left: 30%;
+		margin-right: 30%;
+		padding: 0;
+		float: left;
+	}
+}
+
+/* This essentially is the setting the page goes to when it isn't fullscreen 1080p. 
+   The "clone" section is hidden and extra padding is put at the bottom of the page
+   so that all text is clearly shown.
+   */
+@media only screen and (max-height: 900px) {
+	section {
+		padding-bottom: 400px;
+	}
+	section#clone {
+		display: none;
+	}
+}

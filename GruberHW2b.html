@@ -1,0 +1,56 @@
+<!-- 
+Garrett Gruber
+September 13, 2018
+This webpage is for HW2. It showcases the how two different CSS stylesheets canvas
+	be used to create two different appearances for the same HTML file. 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="alternate stylesheet" href= "hw2sty1.css" title="Style1">	
+	<link rel="alternate stylesheet" href= "hw2sty2.css" title="Style2"> 
+	<title>Homework 2</title>
+	<meta http-equiv="Default-Style" content="Style2"> <!-- change content= "Style1" or "Style2" -->
+</head>
+<body>
+	<ul>
+		<li><a href="#tab1">Tab 1</a></li>
+		<li><a href="#tab2">Tab 2</a></li>
+		<li><a href="#tab3">Tab 3</a></li>
+		<li><a href="#tab4">Tab 4</a></li>
+	</ul>
+	<header>
+		<h3>Web Programming Homework 2</h3>
+	</header>
+	<section>
+		<article>
+			<h1>1<sup><small>st</small></sup> Article</h1>
+			<p>How much wood could a woodchuck chuck if a woodchuck could chuck wood?</p>
+			<ol>
+				<li class="b">) Enough</li>
+				<li class="b">) Not Enough</li>
+				<li class="b">) All of the Above</li>
+				<li class="b">) At Least None of the Above</li>
+			</ol>		
+		</article>
+		<article class="alt">
+			<h2>2<sup><small>nd</small></sup> Article</h2>
+			<p><img src="not me.gif" alt="derp" style="width:30%; height:auto;"></p>
+			<p>This text is unrelated to the above picture.</p>
+		</article>
+	</section>
+	<footer>
+		<p class="fineprint">This text is very, <b>very</b> small</p>
+		<p>Last updated <i>September 13, 2018</i></p>
+	</footer>
+	<hr>
+	<h4>Use of the inherit value</h2>
+	<p>Let the left margin be inherited from the parent element:</p>
+	<div>
+	<p class="ex1">This paragraph has an inherited left margin (from the div element).</p>
+	</div>
+	<p> italic </p>
+	<p class="oblic"> Oblique</p>
+</body>
+</html>

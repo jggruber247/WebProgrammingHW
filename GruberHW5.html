@@ -1,0 +1,128 @@
+<!-- FILE: "GruberHW5.html"
+Garrett Gruber
+October 23, 2018
+This website is for Homework 5. It contains a table and a button. Upon clicking the button, the user will be given a series of prompts to update a specific cell of the table.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CSCI 4500 Grade Book</title>
+	<link rel="stylesheet" href="GruberHW5.css">
+</head>
+<script>
+// Function that prompts the user in a series of popup boxes and updates the table
+function myFunction() {
+    var studentID = prompt("Enter Student ID",""); // Selects the Row that will be updated
+    if (studentID == 1) {
+		var entry = prompt("Enter 2 for HW1, 3 for HW2, 4 for Midterm, 5 for Final Exam",""); // Selects the Column that will be updated
+		if (entry == 2) {
+			var grade = prompt("Enter Grade",""); // Prompts the user to enter the new value.
+			document.getElementById("id1hw1").innerHTML = grade; // Updates the cell's value.
+			}
+		else if (entry == 3) {
+			var grade = prompt("Enter Grade","");
+			document.getElementById("id1hw2").innerHTML = grade;
+			}
+		else if (entry == 4) {
+			var grade = prompt("Enter Grade","");
+			document.getElementById("id1mid").innerHTML = grade;
+			}
+		else if (entry == 5) {
+			var grade = prompt("Enter Grade","");
+			document.getElementById("id1fin").innerHTML = grade;
+			}
+		else {
+			alert("Invalid Selection: " + entry); // If user enters an entry that isn't 2, 3, 4, or 5, an alert will show that displays the incorrect entry.
+			}
+		}
+	else if (studentID == 2) {
+		var entry = prompt("Enter 2 for HW1, 3 for HW2, 4 for Midterm, 5 for Final Exam","");
+		if (entry == 2) {
+			var grade = prompt("Enter Grade","");
+			document.getElementById("id2hw1").innerHTML = grade;
+			}
+		else if (entry == 3) {
+			var grade = prompt("Enter Grade","");
+			document.getElementById("id2hw2").innerHTML = grade;
+			}
+		else if (entry == 4) {
+			var grade = prompt("Enter Grade","");
+			document.getElementById("id2mid").innerHTML = grade;
+			}
+		else if (entry == 5) {
+			var grade = prompt("Enter Grade","");
+			document.getElementById("id2fin").innerHTML = grade;
+			}
+		else {
+			alert("Invalid Selection: " + entry);
+			}
+		}
+	else if (studentID == 3) {
+		var entry = prompt("Enter 2 for HW1, 3 for HW2, 4 for Midterm, 5 for Final Exam","");
+		if (entry == 2) {
+			var grade = prompt("Enter Grade","");
+			document.getElementById("id3hw1").innerHTML = grade;
+			}
+		else if (entry == 3) {
+			var grade = prompt("Enter Grade","");
+			document.getElementById("id3hw2").innerHTML = grade;
+			}
+		else if (entry == 4) {
+			var grade = prompt("Enter Grade","");
+			document.getElementById("id3mid").innerHTML = grade;
+			}
+		else if (entry == 5) {
+			var grade = prompt("Enter Grade","");
+			document.getElementById("id3fin").innerHTML = grade;
+			}
+		else {
+			alert("Invalid Selection: " + entry);
+			}
+		}
+	else {
+		alert("Invalid Student ID: " + studentID); // If the user enters a Student ID that isn't recognized, an alert will show that displays the invalid entry.
+	}
+}
+</script>
+<body>
+	<h1>Grade Book for CSCI 4500</h1>
+	<br>
+	<table id="t01">
+		<tr>
+			<th>Student ID</th>
+			<th>Name</th>
+			<th>HW1</th>
+			<th>HW2</th>
+			<th>Midterm</th>
+			<th>Final Exam</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Tom Sizemoore</td>
+			<td id="id1hw1"></td>
+			<td id="id1hw2"></td>
+			<td id="id1mid"></td>
+			<td id="id1fin"></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Neil Patrick Harris</td>
+			<td id="id2hw1"></td>
+			<td id="id2hw2"></td>
+			<td id="id2mid"></td>
+			<td id="id2fin"></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Jack Reacher</td>
+			<td id="id3hw1"></td>
+			<td id="id3hw2"></td>
+			<td id="id3mid"></td>
+			<td id="id3fin"></td>
+		</tr>
+	</table>
+	<br>
+	<button type="button" onclick="myFunction()">Set/Update grade</button>
+</body>
+</html>

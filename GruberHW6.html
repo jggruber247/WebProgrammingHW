@@ -1,0 +1,154 @@
+<!-- FILE: "GruberHW6.html"
+Garrett Gruber
+November 1, 2018
+This website displays a long credit list. At the top are 3 buttons. The leftmost button causes the credits to begin scrolling (the buttons remain at the top). The middle button stops the scrolling, and the last button resets the page to the top.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>A long credits list</title>
+	<link rel="stylesheet" href="GruberHW6.css">
+</head>
+<script>
+	//Upon clicking the START button, the page will begin scrolling at a rate of 2px every 8 milliseconds
+		//NOTE: clicking START again will make the page scroll faster
+	function startScroll() {
+		window.scrollBy(0,2);
+		scrdel = setTimeout('startScroll()',8);
+		//when the window reaches the bottom, it instantly scrolls to the top and keeps scrolling
+		if((window.innerHeight + window.scrollY) >= (document.body.offsetHeight) || (window.scrollY  == 0)) {
+			window.scrollTo(0,0);
+		}
+	}
+	
+	//Upon clicking the STOP button, the page will stop scrolling (if START was clicked more than once, the scrolling will slow down instead.)
+	function stopScroll() {
+		clearTimeout(scrdel);
+	}
+	
+	//Upon clicking the RESET button, the page will return to the top and the scrolling will stop.
+	function resetScroll() {
+		window.scroll(0,0);
+		clearTimeout(scrdel);
+	}
+</script>
+<body>
+<!-- The header contains the three control buttons for the page and remains fixed at the top while the page scrolls. -->
+	<header>
+		<button id="go" type="button" onclick="startScroll()">Start</button>
+		<button id="stop" onclick="stopScroll()">Stop</button>
+		<button id="reset" onclick="resetScroll()">Reset</button>
+	</header>
+<!-- This is the credits list. It is essentially nonsense. -->
+	<section>
+		<h1>Working Title</h1>
+		<hr id="bold">
+		<br>
+		<h2>Director</h2>
+		<p>Stephine Spielbarg</p>
+		<br>
+		<h2>Executive Producer</h2>
+		<p>Abcdefghij Klmnopqr Stuvwxyz</p>
+		<br>
+		<h2>Producers</h2>
+		<p>Cookie Monster</p>
+		<p>Bert and Ernie Collective</p>
+		<p>Gabe Newell</p>
+		<br>
+		<h2>Director of Photography</h2>
+		<p>This Is Tedious ("T.I.T.")</p>
+		<br>
+		<h2>Casting Person</h2>
+		<p>Liam Neisson</p>
+		<br>
+		<h2>Screenplay</h2>
+		<p>Edgar Allen Pooh</p>
+		<br>
+		<h2>Editing</h2>
+		<p>"We'll fix it in post!</p>
+		<br>
+		<br>
+		<h2>Cast</h2>
+		<hr>
+		<p>Bibbo		...	    ...		Himself</p>
+		<p>Florbo		...		...		Bibbo</p>
+		<p>Cleaning Fluid ...		...		Happy Dave</p>
+		<p>Dr. Seed		...		...		Moeneee</p>
+		<p>Claire		...		...		Herself</p>
+		<p>Andrew		...		...		Racecar Mike</p>
+		<br>
+		<h2>Costume Design</h2>
+		<p>Dracula and his Son</p>
+		<br>
+		<h2>Make Up</h2>
+		<p>Ehhhhhhhhh</p>
+		<br>
+		<h2>Lighting</h2>
+		<p>Eye Can Otsee</p>
+		<br>
+		<h2>Sound Design</h2>
+		<p>Me</p>
+		<br>
+		<h2>Lunches</h2>
+		<p>Best Moms Ever LLC</p>
+		<br>
+		<h2>Special Effects Supervisor</h2>
+		<p>Stan Winston</p>
+		<br>
+		<h2>Extras</h2>
+		<p>Who cares?</p>
+		<br>
+		<h2>Special Thanks</h2>
+		<p>The <strong>FitnessGram Pacer Test</strong> is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly but gets faster each minute after you hear this signal: <b>BODEBOOP.</b> A single lap should be completed every time you hear this sound: <b>DING.</b> Remember to run in a straight line and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word "start." On your mark. Get ready!… Start!</p>
+		<br>
+		<h2><i>Filmed on Location</i> --> [Iceland || !(Australia)]</h2>
+		<br>
+		<img src="not me.gif">
+		<br>
+		<p>No Bibbos were harmed in the making of this "film."</p>
+	</section>
+<!-- This next section is only used to create an illusion that the text is scrolling seemlessly and infinitely. The screen jumps to the top at the same time the "clone" section is at the top, effectively hiding the jump. The result is the list appears to loop endlessly. It is important to note that this illusion only works when the window display height is about 940px. This section is hidden at resolutions lower than this.  -->
+	<section id="clone">
+		<h1>Working Title</h1>
+		<hr id="bold">
+		<br>
+		<h2>Director</h2>
+		<p>Stephine Spielbarg</p>
+		<br>
+		<h2>Executive Producer</h2>
+		<p>Abcdefghij Klmnopqr Stuvwxyz</p>
+		<br>
+		<h2>Producers</h2>
+		<p>Cookie Monster</p>
+		<p>Bert and Ernie Collective</p>
+		<p>Gabe Newell</p>
+		<br>
+		<h2>Director of Photography</h2>
+		<p>This Is Tedious ("T.I.T.")</p>
+		<br>
+		<h2>Casting Person</h2>
+		<p>Liam Neisson</p>
+		<br>
+		<h2>Screenplay</h2>
+		<p>Edgar Allen Pooh</p>
+		<br>
+		<h2>Editing</h2>
+		<p>"We'll fix it in post!</p>
+		<br>
+		<br>
+		<h2>Cast</h2>
+		<hr>
+		<p>Bibbo		...	    ...		Himself</p>
+		<p>Florbo		...		...		Bibbo</p>
+		<p>Cleaning Fluid ...		...		Happy Dave</p>
+		<p>Dr. Seed		...		...		Moeneee</p>
+		<p>Claire		...		...		Herself</p>
+		<p>Andrew		...		...		Racecar Mike</p>
+		<br>
+		<h2>Costume Design</h2>
+		<p>Dracula and his Son</p>
+		<br>
+	</section>
+</body>
+</html>

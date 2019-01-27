@@ -1,0 +1,185 @@
+/* Garrett Gruber
+October 4, 2018
+This is the CSS for the travel guide page of HW4 */
+body {
+	/* Essentially removing the default padding/margin settings */
+	padding: 0;
+	margin: 0;
+	background-color: #efe9e2;
+	font-family: Arial, Verdana, Sans-Serif;
+}
+
+header {
+	width: 90%;
+	height: 30%;
+	background-color: white;
+	padding: 30px 5% 40px 5%;
+}
+
+/* table used to align pictures and logo in header */
+table#t01 {
+	width: 100%;
+	border-collapse: collapse;
+}
+td {
+	text-align: center;
+	height: 20px;
+	width: 20%;
+}
+td.r1 {
+	text-align: center;
+	height: 30%;
+	width: 20%;
+}
+
+/* Sizing and styling for the page's images */
+img#image1 {
+	width: 35%;
+	height: auto;
+}
+img#image2 {
+	width: 30%;
+	height: auto;
+}
+img#image3 {
+	width: 35%;
+	height: auto;
+}
+img#image4 {
+	width: 30%;
+	height: auto;
+}
+img#image5 {
+	width: auto;
+	height: 300px;
+	float: right;
+}
+img#logo {
+	width: 100%;
+	height: auto;
+}
+
+/* h1 and p#logo used as alternative to logo image */
+h1 {
+	text-align: center;
+	font-family: Georgia;
+	color: #f53247;
+	font-size: 250%;
+	margin: 0px;
+	text-shadow: -2px 0px gray;
+}
+p#logo {
+	font-size: 125%;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+
+/* hyperlink without styling */
+a {
+	text-decoration: none;
+	color: black;
+}
+
+section:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+footer {
+	width: 100%;
+	background-color: #efe9e2;
+	margin-top: 0;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+/* Styling for section with the description of travel guides */
+article#desc {
+	background-color: #efe9e2;
+	float: left;
+	width: 67%;
+	height: 280px;
+	padding-left: 3%;
+}
+
+/* Styling for the section around the red box */
+article#red {
+	background-color: #efe9e2;
+	float: left;
+	/* padding: 10px; */
+	width: 30%;
+	height: 280px;
+}
+/* Syling for the red box */
+div {
+	background-color: #f53247;
+	color: white;
+	margin: 10%;
+	padding: 10px;
+}
+
+/* Section for the Detroit Picture */
+article#pict {
+	background-color: #efe9e2;
+	width: 50%;
+	height: 300px;
+	float: left;
+	
+}
+
+/* Section for the description of the Detroit travel guide */
+article#detroit {
+	background-color: white;
+	color: black;
+	width: 47%;
+	height: 300px;
+	float: left;
+	margin-right: 3%;
+}
+
+button {
+	width: 20%;
+	color: black;
+	background-color: #84b399;
+	padding: 5px 10px 5px 10px;
+	margin: 0px 10px 30px 25px;
+	text-transform: uppercase;
+}
+
+hr {
+	width: 40%;
+	border-top: 3px solid black;
+}
+
+/* Styling for the different paragraph elements used. */
+p {
+	font-size: 125%;
+	padding: 0px 10px 5px 20px;
+}
+p.cent {
+	text-align: center;
+	font-size: 150%;
+}
+
+/* Styling for the different headers used */
+h2 {
+	padding: 15px 0px 5px 20px;
+	font-size: 250%;
+}
+h3 {
+	text-align: center;
+	font-size: 125%;
+}
+h4 {
+	padding: 15px 0px 5px 20px;
+	font-size: 160%;
+}
+
+ul {
+	text-align: left;
+	margin-left: 10%;
+}
+
+

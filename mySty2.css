@@ -1,0 +1,80 @@
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333333;
+}
+li {
+	float: left;
+}
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
+}
+li a:hover {
+	background: black url("no.gif") repeat-x fixed top;
+}
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+th, td {
+	padding: 4px;
+	text-align: center;
+}
+table {
+	border-spacing: 2px;
+}
+table#t01 {
+	color: white;
+	background-color: green;
+}
+
+body {
+	background-image: url("death.gif");
+	background-attachment: fixed;
+}
+
+@media only screen and (min-width: 700px) {
+	body {
+		background-image: url("no.gif");
+		background-attachment: fixed;
+	}
+}
+
+caption {background: black url("stop.gif") repeat-x fixed top; color: red;}
+
+p.dotted {border-style: dotted;}
+p.dashed {border-style: dashed;}
+p.solid {border-style: solid;}
+p.double {border-style: double;}
+
+@media only screen and (orientation: landscape) {
+	body {
+		background-color: lightblue;
+	}
+}
+@media only screen and (min-width: 601px) {
+	div.example {
+		font-size: 60px;
+		background-color: red;
+	}
+}
+@media only screen and (max-width: 600px) {
+	div.example {
+		font-size: 30px;
+		background-color: green;
+	}
+}
+img {
+	width: 50%;
+	height: auto;
+}
+img.alte {
+	max-width: 50%;
+	height: auto; 
+}

@@ -1,0 +1,151 @@
+<!-- FILE: "GruberHW7.html"
+Garrett Gruber
+November 13, 2018
+This web application works as a number guessing game. The app randomly selects a number between 1 and 100, and the user tries to guess the number in ten tries. With each wrong guess, the users score drops 5 points from the base 50 points. After each guess, the app tells the user how relatively close they are to the correct answer ("very cold", "cold", "warm", "hot", "burning"). If the user correctly guesses the number, the user's score is displayed. After 10 incorrect guesses, "Game Over" is shown and the user is prompted to play again.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+	<link rel="stylesheet" href="GruberHW7.css">
+</head>
+<script>
+//This function sets the score to its initial state of 50 points
+function scoreInit() {
+	var score = 50;
+	document.getElementById('points').innerHTML = score;
+}
+
+//This function randomly chooses an integer between 1 and 100. It runs when the page is loaded, and also runs scoreInit() simultaneously.
+function randNumGen() {
+	scoreInit();
+	var num;
+	num = Math.floor((Math.random() * 100) + 1);
+	document.getElementById('clue').title=num; //the answer can be viewed by hovering the mouse over the text in the footer
+}
+
+//This function, called when the user guesses incorrectly, subtracts 5 points from the score. It then checks if the score is zero, and if it is, will call the gameOver() function.
+function scoreSub() {
+	var score = document.getElementById('points').innerHTML;
+	score = score - 5;
+	document.getElementById('points').innerHTML = score;
+	if (score == 0) {
+		gameOver();
+	}
+}
+
+//This function displays a pop up that tells the user they lost, shows the correct answer, and prompts them to play agian.
+function gameOver() {
+	var answer = document.getElementById('clue').title;
+    var r = confirm("Sorry, you failed to guess the correct number,\nwhich was " + answer + ".\nPress OK to play again, or Cancel to stop.");
+    if (r == true) {
+        location.reload();
+    }
+}
+
+//This function displays a pop up that tells the user they won, shows their score, and prompts them to play agian.
+function gameVictory() {
+	var score = document.getElementById('points').innerHTML;
+	var r = confirm("Nice, you guessed the right number!\nYour final score was " + score + " points!\nPress OK to play again, or Cancel to stop.");
+    if (r == true) {
+        location.reload();
+    }
+}
+
+//This function checks the users guess and replies appropriately
+function guessGame() {
+	var hintText = "";
+	var hintText2 = document.getElementById('guesses').innerHTML;
+	document.getElementById('guesses').style.display='block'; //Displays the guesses list
+	document.getElementById('hint').style.display='block'; //Reshows the hint text element
+	document.getElementById('burn').style.display='none'; //Hides the image again
+	var points = document.getElementById('points').innerHTML;
+	var G = document.getElementById('guess').value;
+	var R = document.getElementById('clue').title;
+	var diff = Math.abs(G-R); //Difference between the user's guess and the answer
+	if (diff == 0) { //If the guess is right, run gameVictory() function
+		hintText="You got it!";
+		hintText2="Awesome!";
+		document.getElementById('hint').innerHTML = hintText;
+		document.getElementById('guesses').innerHTML = hintText2;
+		gameVictory();
+	}
+	else{ //If the guess is wrong, determines how close to the answer the guess was.
+		if (points == 50) { hintText2 += G; }
+		else { hintText2 += ", " + G; }
+		document.getElementById('guesses').innerHTML = hintText2; 
+		scoreSub();
+		if (diff >= 80) { //Guess is 80 or more off
+			hintText="You are very cold.";
+			document.getElementById('hint').innerHTML = hintText;
+			document.getElementById('hint').style.color='#66ffff';
+			document.getElementById('hint').style.textShadow='1px 1px black';
+			document.getElementById('hint').style.backgroundColor='white';
+		}
+		else if ((diff >= 60) && (diff < 80)) { //Guess is between 60 and 80 off, including 60
+			hintText="You are cold.";
+			document.getElementById('hint').innerHTML = hintText;
+			document.getElementById('hint').style.color='#0066ff';
+			document.getElementById('hint').style.textShadow='1px 1px black';
+			document.getElementById('hint').style.backgroundColor='white';
+		}
+		else if ((diff >= 40) && (diff < 60)) { //Guess is between 40 and 60 off, including 40
+			hintText="You are warm.";
+			document.getElementById('hint').innerHTML = hintText;
+			document.getElementById('hint').style.color='#ffff00';
+			document.getElementById('hint').style.textShadow='1px 1px black';
+			document.getElementById('hint').style.backgroundColor='white';
+		}
+		else if ((diff >= 20) && (diff < 40)) { //Guess is between 20 and 40 off, including 20
+			hintText="You are hot. ;P";
+			document.getElementById('hint').innerHTML = hintText;
+			document.getElementById('hint').style.color='#ff8000';
+			document.getElementById('hint').style.textShadow='1px 1px yellow';
+			document.getElementById('hint').style.backgroundColor='white';
+		}
+		else if ((diff > 0) && (diff < 20)) { //Guess is within 20 off
+			document.getElementById('hint').style.display='none'; //Hides text element
+			document.getElementById('burn').style.display='block'; //Displays image element
+		}
+		else {
+			hintText="Invalid Entry"; 
+			document.getElementById('hint').innerHTML = hintText;
+		}
+	}
+	document.getElementById('guess').value = null;
+}
+</script>
+<body onload = randNumGen();>
+	<header>
+		<h1>Guess My Number</h1>
+		<hr>
+	</header>
+	<section>
+		<div id="d1">
+			<h3>I have a number<br>between 1 and 100</h3>
+		</div>
+		<div id="entry">
+			<input id="guess" type="number" name="guess" placeholder="Enter Number">
+		</div>
+		<div id="button">
+			<button id="submit" onclick="guessGame()" type="button">Submit</button>
+		</div>
+		<div id="feedback">
+			<h4 id="hint"></h4>
+			<img id="burn" src="youareburning.gif">
+		</div>
+		<div id="d5">
+			<!-- displays a list of the numbers guessed so far -->
+			<h4 id="guesses">Guesses: </h4> 
+		</div>
+		<div id="score">
+			<h5>Points: <span id="points">null</span></h5>
+		</div>
+	</section>
+	<footer>
+		<hr>
+		<!-- displays the solution when hovered over for the purpose of debugging -->
+		<h2 id="clue" title="clue">A Web App by Garrett Gruber</h2> 
+	</footer>
+</body>
+</html>

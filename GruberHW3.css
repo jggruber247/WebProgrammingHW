@@ -1,0 +1,182 @@
+/* 
+Garrett Gruber
+September 25, 2018
+This is the CSS file that accompanies the GruberHW3.html file. 
+*/
+body {
+	font-family: Verdana;
+}
+
+ul {
+	list-style-type: none;
+	padding: 1px;
+	overflow: hidden;
+	background-color: black;
+	float: right;
+}
+li {
+	float: left;
+	padding: 3px;
+}
+
+li a {
+	display: block;
+	color: gray;
+	text-align: center;
+	padding: 7px 2px 2px 2px;
+	width: 85px;
+	text-decoration: none;
+	font-family: Arial;
+	font-size: 13px;
+	border-top: 1px solid gray;
+}
+
+li a:hover {
+	color: #6AAF6A;
+	border-top: 4px solid #6AAF6A;
+	padding: 4px 2px 2px 2px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+header {
+	margin: 0px;
+	padding: 0px;
+	background-color: black;
+}
+
+article {
+	background-color: #F4FEF4;
+}
+
+article.navbar {
+	float: right;
+	width: 45%; 
+	padding-right: 150px;
+	padding-top: 45px;
+	background-color: black;
+	height: 100px;
+}
+
+article.mainlogo {
+	float: left;
+	width: 55% ;
+	padding-left: 200px;
+	background-color: black;
+	height: 100px;
+}
+
+article.pic {
+	float: left;
+	width: 35%;
+	height: 400px;
+	margin-top: 20px;
+}
+
+article.descript {
+	float: left;
+	width: 35%;
+	height: 400px;
+	padding: 15px 15px 15px 30px;
+	margin-top: 20px;
+}
+
+article.cont {
+	float: right;
+	width: 30%;
+	height: 400px;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+img {
+	width: auto; 
+	height: auto; 
+	padding: 10%;
+}
+
+section {
+	margin-left: 200px;
+	margin-right: 200px;
+	padding-top: 50px;
+}
+
+section:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+span.gre {
+	color: #6AAF6A;
+	text-shadow: -1px -1px green;
+}
+
+h1 {
+	color: gray;
+	font-size: 30px;
+	padding: 0px;
+	margin: 30px 0px 0px 0px;
+	letter-spacing:-2px;
+}
+
+h2 {
+	color: #6AAF6A;
+	font-size: 18px;
+	font-family: Arial;
+	padding: 0px;
+	margin: 0px;
+	font-weight: normal;
+}
+
+h3 {
+	color: #6AAF6A;
+	font-size: 40px;
+	margin: 0px;
+	text-align: center;
+}
+
+h4 {
+	color: #6AAF6A;
+	padding: 0px 0px 10px 0px;
+	margin: 0px;
+	text-align: center;
+}
+
+h5 {
+	color: #6AAF6A;
+	font-size: 12px;
+	padding: 20px 0px 0px 0px;
+	margin: 0px;
+}
+
+p {
+	font-size: 10px;
+	padding: 0px;
+	margin: 0px;
+}
+
+p.butt {
+	margin: 35px 0px 0px 0px;
+	background-color: #6AAF6A;
+	color: white;
+	width: 50%;
+	text-align: center;
+	font-size: 15px;
+	padding: 5px 20px 5px 20px;
+}
+
+i {
+	font-size: 25px;
+	color: gray;
+}
+
+i:hover {
+	color: black;
+}
+
+strong {
+	font-style: italic;
+}
